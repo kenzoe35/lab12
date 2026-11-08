@@ -124,3 +124,15 @@ int play_hangman() {
     return 0;
   }
 }
+
+Hangman::Hangman(std::string title)
+    : Game(std::move(title)), m_times_played(0) {}
+
+void Hangman::play() {
+    ++m_times_played;
+    set_score(play_hangman());
+}
+
+int Hangman::times_played() const {
+    return m_times_played;
+}

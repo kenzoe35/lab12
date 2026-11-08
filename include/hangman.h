@@ -3,7 +3,8 @@
 
 #include <random>
 #include <string>
-
+#include "game.h"
+#include "hangman.h"
 /// @file hangman.h
 /// @brief Hangman, written with free functions only.
 
@@ -62,14 +63,15 @@ int play_hangman();
 
 class Hangman : public Game {
 public:
-    Hangman();
+    explicit Hangman(std::string title = "Hangman");
+    
+    // Non-virtual play method wrapping play_hangman()
     void play();
-    int times_played(); const;
+    
+    // Times played getter
+    int times_played() const;
 
 private:
-    int m_times_played = 0;
-
-
+    int m_times_played;
 };
-
 #endif // ARCADE_HANGMAN_H
