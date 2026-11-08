@@ -6,6 +6,7 @@
 #include "input.h"
 #include "item.h"
 #include "player.h"
+#include "game.h"
 
 void connect_rooms(Room &a, Direction d, Room &b) {
   a.connect(d, &b);
@@ -139,4 +140,11 @@ int play_dungeon() {
     }
   }
   return dungeon_score(player.inventory_count(), player.health());
+}
+
+DungeonGame::DungeonGame(std::string title) : Game(std::move(title)) {}
+
+void DungeonGame::play() {
+    int score = play_dungeon();
+    set_score(score);
 }
