@@ -60,4 +60,16 @@ int hangman_score(int misses_left, int word_length);
 /// stops early
 int play_hangman();
 
+class Hangman : public Game {
+public:
+    Hangman();
+    void play();
+    int times_played(); const;
+
+private:
+    int m_times_played = 0;
+
+
+};
+
 #endif // ARCADE_HANGMAN_H
