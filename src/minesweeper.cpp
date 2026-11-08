@@ -90,3 +90,15 @@ int play_minesweeper() {
     }
   }
 }
+
+Minesweeper::Minesweeper(std::string title)
+    : Game(std::move(title)), m_times_played(0) {}
+
+void Minesweeper::play() {
+    ++m_times_played;
+    set_score(play_minesweeper());
+}
+
+int Minesweeper::times_played() const {
+    return m_times_played;
+}
