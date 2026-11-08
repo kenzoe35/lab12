@@ -8,6 +8,7 @@
 #include "deck.h"
 #include "hand.h"
 #include "input.h"
+#include "game.h"
 
 namespace {
 
@@ -175,4 +176,11 @@ int play_blackjack() {
     std::cout << "You leave with " << bankroll << ".\n";
   }
   return bankroll;
+}
+
+BlackjackGame::BlackjackGame(std::string title) : Game(std::move(title)) {}
+
+void BlackjackGame::play() {
+    int score = play_blackjack();
+    set_last_score(score);
 }
