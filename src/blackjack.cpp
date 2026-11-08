@@ -182,5 +182,5 @@ BlackjackGame::BlackjackGame(std::string title) : Game(std::move(title)) {}
 
 void BlackjackGame::play() {
     int score = play_blackjack();
-    set_last_score(score);
+    set_score(score);
 }

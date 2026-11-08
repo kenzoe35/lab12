@@ -3,6 +3,7 @@
 
 #include "direction.h"
 #include "room.h"
+#include "game.h"
 
 /// @file dungeon.h
 /// @brief The Dungeon game: six rooms, items, a trap, and text commands.
@@ -22,5 +23,12 @@ int dungeon_score(int items_collected, int health);
 /// Play the Dungeon until the player quits or dies.
 /// @return dungeon_score() of the player when they quit, or 0 if the player died
 int play_dungeon();
+
+class DungeonGame : public Game {
+public:
+    explicit DungeonGame(std::string title = "Dungeon");
+    
+    void play();
+};
 
 #endif // ARCADE_DUNGEON_H
