@@ -47,6 +47,7 @@ Choice parse_choice(const std::string &text) {
 
 int main() {
   Hangman hangman;
+  Minesweeper minesweeper;
   std::string line;
   while (true) {
     print_menu();
@@ -69,7 +70,8 @@ int main() {
       report_score(play_blackjack());
       break;
     case Choice::minesweeper:
-      report_score(play_minesweeper());
+      minesweeper.play();
+      report_score(minesweeper.last_score());
       break;
     case Choice::quit:
       break;

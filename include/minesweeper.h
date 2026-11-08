@@ -1,6 +1,6 @@
 #ifndef ARCADE_MINESWEEPER_H
 #define ARCADE_MINESWEEPER_H
-
+#include "game.h"
 /// @file minesweeper.h
 /// @brief The Minesweeper game loop.
 
